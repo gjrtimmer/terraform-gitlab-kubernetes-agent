@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-rm -rf ./.terraform
-rm -rf ./.terraform.lock.hcl
 
 # Prompt the user for input
 echo "Terraform Init"
@@ -9,11 +7,11 @@ read -rp    "Enter the GitLab Username                   : " GITLAB_USERNAME
 read -rsp   "Enter the GitLab Token (Secret)             : " GITLAB_ACCESS_TOKEN
 echo
 
-# Create or overwrite the .env file
-cat << EOF > .env
-export TF_VAR_gitlab_token=${GITLAB_ACCESS_TOKEN}
-export GITLAB_PROJECT_ID=68926829
-export TF_STATE_NAME=gitlab-agents
+    # Create or overwrite the .env file
+cat <<EOF > .env
+    export TF_VAR_gitlab_token=${GITLAB_ACCESS_TOKEN}
+    export GITLAB_PROJECT_ID=68926829
+    export TF_STATE_NAME=gitlab-agents
 EOF
 
 echo ".env file created successfully!"
