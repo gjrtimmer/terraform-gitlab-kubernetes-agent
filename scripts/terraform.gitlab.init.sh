@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+if [[ ! -f .env ]]; then
 # Prompt the user for input
 echo "Terraform Init"
 echo
@@ -16,6 +17,7 @@ cat <<EOF > .env
 EOF
 
 echo ".env file created successfully!"
+fi
 
 # shellcheck disable=SC1091
 source .env
