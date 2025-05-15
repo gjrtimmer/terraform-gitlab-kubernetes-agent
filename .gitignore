@@ -1,0 +1,7 @@
+# GitIgnore
+.env
+.terraform
+.terraform.lock.hcl
+config/*
+!config/config.example.yml
+!config/agents.example.yml
