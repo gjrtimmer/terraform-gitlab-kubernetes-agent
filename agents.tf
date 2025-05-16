@@ -1,7 +1,7 @@
 # code: language=hcl
 module "gitlab-agent" {
   source = "github.com/sparkfabrik/terraform-gitlab-kubernetes-gitlab-agent?ref=main"
-  count  = length(config.agents)
+  count  = length(local.config.agents)
 
   create_namespace  = try(local.config.agents[count.index].namespace.create, true)
   namespace         = try(local.config.agents[count.index].namespace.name, "gitlab-agent")
