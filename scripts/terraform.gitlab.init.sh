@@ -7,13 +7,18 @@ echo
 read -rp    "Enter the GitLab Username                   : " GITLAB_USERNAME
 read -rp    "Enter GitLab Project ID (e.g. 68926829)     : " GITLAB_PROJECT_ID
 read -rsp   "Enter the GitLab Token (Secret)             : " GITLAB_ACCESS_TOKEN
+read -rp    "Enter Kubernetes Context                    : " K8S_CONTEXT
 echo
+
+if [[ -z "$K8S_CONTEXT" ]]; then
+    K8S_CONTEXT="default"
+fi
 
     # Create or overwrite the .env file
 cat <<EOF > .env
     export TF_VAR_gitlab_token=${GITLAB_ACCESS_TOKEN}
     export GITLAB_PROJECT_ID=${GITLAB_PROJECT_ID}
-    export TF_STATE_NAME=gitlab-agents
+    export TF_STATE_NAME=gitlab-agents-${K8S_CONTEXT}
 EOF
 
 echo ".env file created successfully!"

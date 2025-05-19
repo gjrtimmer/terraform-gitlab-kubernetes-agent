@@ -4,3 +4,9 @@ variable "gitlab_token" {
   description = "GitLab API token"
   sensitive   = true
 }
+
+variable "context" {
+  type        = string
+  description = "Kubernetes Context"
+  default     = "default"
+}
