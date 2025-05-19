@@ -1,3 +1,3 @@
 locals {
-    config = yamldecode(file("${path.module}/config/agents.yml"))
+  config = yamldecode(file("${path.module}/config/agents.yml"))
 }
