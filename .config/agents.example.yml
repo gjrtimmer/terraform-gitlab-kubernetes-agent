@@ -1,0 +1,12 @@
+# code: language=yaml
+---
+agents:
+  - name: "k3s"
+    namespace:
+      name: "gitlab-agent"
+      create: true
+    repository:
+      path: "k3s-tpi/gitlab-agents"
+      branch: "main"
+    config: config/k3s.yml
+    replicas: 2

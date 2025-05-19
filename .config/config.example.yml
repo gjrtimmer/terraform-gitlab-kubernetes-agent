@@ -1,4 +1,3 @@
 ci_access:  
   groups:
-    - id: k3s-tpi
-
+    - id: {GROUP_NAME}

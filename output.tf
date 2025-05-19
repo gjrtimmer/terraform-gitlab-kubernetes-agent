@@ -1,5 +1,5 @@
 # code: language=hcl
-output "ga_token_gitlab_com" {
-  value     = module.ga_gitlab_com.gitlab_agent_token
+output "gitlab_agent_token" {
+  value     = module.gitlab-agent[0].gitlab_agent_token
   sensitive = true
 }

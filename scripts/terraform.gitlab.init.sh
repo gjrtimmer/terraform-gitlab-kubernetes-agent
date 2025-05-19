@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
 
+if [[ ! -f .env ]]; then
 # Prompt the user for input
 echo "Terraform Init"
 echo
 read -rp    "Enter the GitLab Username                   : " GITLAB_USERNAME
+read -rp    "Enter GitLab Project ID (e.g. 68926829)     : " GITLAB_PROJECT_ID
 read -rsp   "Enter the GitLab Token (Secret)             : " GITLAB_ACCESS_TOKEN
 echo
 
     # Create or overwrite the .env file
 cat <<EOF > .env
     export TF_VAR_gitlab_token=${GITLAB_ACCESS_TOKEN}
-    export GITLAB_PROJECT_ID=68926829
+    export GITLAB_PROJECT_ID=${GITLAB_PROJECT_ID}
     export TF_STATE_NAME=gitlab-agents
 EOF
 
 echo ".env file created successfully!"
+fi
 
 # shellcheck disable=SC1091
 source .env

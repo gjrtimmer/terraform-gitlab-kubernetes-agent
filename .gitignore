@@ -1,2 +1,6 @@
+# GitIgnore
 .env
 .terraform
+.terraform.lock.hcl
+config/*
+!config/.keep

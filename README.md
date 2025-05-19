@@ -10,9 +10,12 @@ The second agent which is linked to the private GitLab is meant for the deployme
 
 ## Usage
 
-1. Run `scripts/terraform.init.sh` to initialize the repository.
-2. Run `source .env`
-3. Run `terraform plan`
-4. Run `terraform apply`
+1. Copy `.config/agents.example.yml` to `config/agents.yml`
+2. Configure Agents in `config/agents.yml`
+3. For each agent create `config/{AGENT_NAME}.yml` in `config` using the the template: `.config/config/example.yml`
+4. Run `scripts/terraform.init.sh` to initialize the repository.
+5. Run `source .env`
+6. Run `terraform plan`
+7. Run `terraform apply`
 
 This will deploy the agents to the active cluster within the local `.kube/config`.
