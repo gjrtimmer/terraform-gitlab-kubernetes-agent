@@ -1,3 +1,4 @@
 ci_access:  
   groups:
     - id: {GROUP_NAME}
+  projects: []
