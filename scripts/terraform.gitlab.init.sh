@@ -17,7 +17,7 @@ fi
     # Create or overwrite the .env file
 cat <<EOF > .env
     export TF_VAR_gitlab_token=${GITLAB_ACCESS_TOKEN}
-    export TF_VAR_CONTEXT=${K8S_CONTEXT}
+    export TF_VAR_context=${K8S_CONTEXT}
     export GITLAB_PROJECT_ID=${GITLAB_PROJECT_ID}
     export TF_STATE_NAME=gitlab-agents-${K8S_CONTEXT,,}
 EOF
