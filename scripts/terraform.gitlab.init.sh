@@ -6,8 +6,8 @@ echo "Terraform Init"
 echo
 read -rp    "Enter the GitLab Username                   : " GITLAB_USERNAME
 read -rp    "Enter GitLab Project ID (e.g. 68926829)     : " GITLAB_PROJECT_ID
-read -rsp   "Enter the GitLab Token (Secret)             : " GITLAB_ACCESS_TOKEN
 read -rp    "Enter Kubernetes Context (default)          : " K8S_CONTEXT
+read -rsp   "Enter the GitLab Token (Secret)             : " GITLAB_ACCESS_TOKEN
 echo
 
 if [[ -z "$K8S_CONTEXT" ]]; then
